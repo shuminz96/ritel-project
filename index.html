@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An NSF RITEL-funded research project supporting students’ scientific modeling through augmented reality and an LLM-powered pedagogical agent.">
+  <title>Collaborative Research: Supporting Students' Modeling Practice Through a Large Language Model-Powered Pedagogical Agent in an Augmented Reality Learning Environment | University of Nevada, Reno</title>
+  <style>
+    :root { --ink:#09233a; --blue:#075da8; --electric:#57b4ff; --mist:#eaf5ff; --paper:#fbfdff; --sun:#ffcc4d; --line:#cfe1ef; --body:#30485b; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--paper); color:var(--ink); font:1.0625rem/1.75 Arial,Helvetica,sans-serif; } a { color:inherit; } a:focus-visible { outline:3px solid var(--sun); outline-offset:4px; }
+    .site-width { width:min(1180px,calc(100% - 48px)); margin:0 auto; }
+    .site-header { background:#081e40; color:white; }
+    .masthead { min-height:120px; padding:.75rem 0; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem 2rem; }
+    .wordmark { display:block; flex:0 1 260px; max-width:100%; }
+    .unr-logo { display:block; width:260px; max-width:100%; height:auto; }
+    .nav { display:flex; gap:.5rem 1.15rem; flex-wrap:wrap; justify-content:end; }
+    .nav a { display:inline-flex; align-items:center; min-height:44px; color:white; text-decoration:none; font-size:.9375rem; line-height:1.6; font-weight:700; }
+    .nav a:hover { color:var(--electric); text-decoration:underline; text-underline-offset:5px; }
+    .hero { background:var(--ink); color:white; overflow:hidden; } .hero-grid { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr); gap:4rem; padding:4rem 0; min-height:590px; align-items:center; position:relative; } .hero-grid::after { content:""; position:absolute; width:500px; height:500px; right:-100px; top:20px; border:1px solid rgba(87,180,255,.4); border-radius:50%; box-shadow:0 0 0 70px rgba(87,180,255,.05),0 0 0 140px rgba(87,180,255,.035); pointer-events:none; }
+    .eyebrow,.section-kicker { color:var(--electric); text-transform:uppercase; letter-spacing:.1em; font-size:.8125rem; line-height:1.6; font-weight:700; margin-bottom:1.25rem; } h1,h2,h3 { font-family:Arial,Helvetica,sans-serif; } h1 { max-width:820px; margin:0; font-size:clamp(2.25rem,3.8vw,3.25rem); line-height:1.25; letter-spacing:-.02em; text-wrap:balance; font-weight:700; } .hero h1 em { color:var(--electric); font-style:italic; }
+    .hero-copy { max-width:640px; margin:1.6rem 0 0; color:#d6e9f9; font-size:1.125rem; line-height:1.8; }  .hero-meta { display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; margin-top:2.25rem; color:#b8d5ed; font-size:.875rem; line-height:1.6; font-weight:700; } .research-signal { position:relative; z-index:1; border:1px solid rgba(255,255,255,.28); padding:1.5rem; background:rgba(255,255,255,.055); } .research-signal .label { color:var(--electric); font-size:.8125rem; line-height:1.6; letter-spacing:.1em; font-weight:700; text-transform:uppercase; } .research-signal p { font-family:Arial,Helvetica,sans-serif; font-size:1.5rem; font-weight:700; line-height:1.5; margin:.8rem 0 1.5rem; } .signal-line { height:1px; background:var(--electric); width:76%; margin:.75rem 0; } .signal-small { color:#b8d5ed; font-size:1rem; line-height:1.75; }
+    .intro { padding:6rem 0 3.5rem; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:4rem; } .section-kicker { color:var(--blue); } .intro h2 { font-size:clamp(2.125rem,3.4vw,2.5rem); line-height:1.3; letter-spacing:-.01em; text-wrap:balance; margin:.55rem 0 0; font-weight:700; } .intro p { color:var(--body); font-size:1.125rem; line-height:1.8; margin:0; max-width:680px; }
+    .objectives { padding:1rem 0 5.5rem; } .objective-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); } .objective { padding:2.1rem 1.6rem 2.4rem 0; min-height:270px; } .objective+.objective { border-left:1px solid var(--line); padding-left:1.6rem; } .objective-tag { font-weight:800; color:var(--blue); font-size:.875rem; line-height:1.6; letter-spacing:.02em; } .objective h3 { font-size:1.875rem; letter-spacing:-.01em; line-height:1.3; margin:1.35rem 0 .75rem; font-weight:700; } .objective p { margin:0; color:var(--body); font-size:1.0625rem; line-height:1.75; max-width:34ch; }
+    .routes { background:var(--mist); padding:5.5rem 0; } .routes-head { display:flex; justify-content:space-between; align-items:end; gap:1rem; margin-bottom:1.7rem; } .routes-head h2 { font-size:clamp(2.25rem,3.7vw,2.75rem); letter-spacing:-.01em; line-height:1.3; text-wrap:balance; font-weight:700; margin:.55rem 0 0; } .routes-head p { color:var(--body); max-width:310px; margin:0; font-size:1.0625rem; line-height:1.75; } .route-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:1rem; } .route { min-height:230px; padding:1.5rem; background:white; text-decoration:none; border:1px solid transparent; transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; } .route:hover { transform:translateY(-5px); border-color:#91c9f2; box-shadow:0 16px 32px rgba(9,35,58,.10); } .route .route-type { color:var(--blue); font-size:.8125rem; line-height:1.6; font-weight:700; letter-spacing:.1em; text-transform:uppercase; } .route h3 { font-size:1.875rem; line-height:1.3; font-weight:700; letter-spacing:-.01em; margin:2.5rem 0 .7rem; } .route p { color:var(--body); font-size:1.0625rem; line-height:1.75; margin:0; } .arrow { display:block; color:var(--blue); font-size:1.25rem; margin-top:1.15rem; }
+    .placeholder-section { padding:4.8rem 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:.7fr 1.3fr; gap:3rem; } .placeholder-section h2 { margin:.4rem 0 0; font-size:clamp(2.125rem,3.4vw,2.5rem); font-weight:700; line-height:1.3; letter-spacing:-.01em; text-wrap:balance; } .placeholder-section p { max-width:690px; margin:0; color:var(--body); font-size:1.125rem; line-height:1.8; } footer { background:var(--ink); color:#cfe4f6; padding:2rem 0; font-size:.875rem; line-height:1.7; } footer .site-width { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .route { transition:none; } } @media (max-width:760px) { .site-width { width:min(100% - 32px,1180px); } .masthead { padding:1rem 0; align-items:flex-start; flex-direction:column; gap:.75rem; } .nav { justify-content:start; gap:.7rem 1rem; } .hero-grid,.intro,.placeholder-section { grid-template-columns:1fr; gap:2rem; } .hero-grid { padding:4.25rem 0; min-height:0; } .hero-grid::after { width:290px; height:290px; right:-180px; top:70px; } h1 { font-size:clamp(2rem,5vw,2.75rem); } .research-signal { max-width:390px; } .intro,.objectives { padding-top:3.8rem; padding-bottom:3.8rem; } .objective-grid,.route-grid { grid-template-columns:1fr; } .objective,.objective+.objective { padding:1.6rem 0; border-left:0; } .objective+.objective { border-top:1px solid var(--line); } .routes { padding:3.8rem 0; } .routes-head { display:block; } .routes-head p { margin-top:1rem; } .route h3 { margin-top:1.5rem; } }
+    /* Team photos keep their original proportions; each portrait has its own focal point. */
+    .team-section { padding:5rem 0; border-bottom:1px solid var(--line); scroll-margin-top:2rem; }
+    .team-heading { display:grid; grid-template-columns:.7fr 1.3fr; align-items:start; gap:3rem; margin-bottom:2.5rem; }
+    .team-heading h2 { margin:.4rem 0 0; font-size:clamp(2.25rem,3.7vw,2.75rem); font-weight:700; line-height:1.3; letter-spacing:-.01em; }
+    .team-heading p { margin:0; max-width:650px; color:var(--body); font-size:1.125rem; line-height:1.8; }
+    .team-group-title { margin:2.5rem 0 1rem; font:700 1.125rem/1.6 Arial,Helvetica,sans-serif; color:var(--blue); }
+    .team-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; align-items:start; }
+    .person { min-width:0; padding:1.5rem; background:white; border:1px solid var(--line); border-radius:12px; }
+    .person-header { display:grid; grid-template-columns:160px minmax(0,1fr); gap:1.25rem; align-items:center; }
+    .portrait { display:block; width:100%; aspect-ratio:1; height:auto; object-fit:cover; border-radius:8px; background:var(--mist); }
+    .portrait-shao { object-position:50% 8%; }
+    .portrait-jin { object-position:50% 90%; }
+    .portrait-zhao { object-position:50% 5%; }
+    .portrait-placeholder { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:.5rem; padding:12px; text-align:center; color:var(--body); }
+    .portrait-placeholder span { font:700 2.75rem/1.2 Arial,Helvetica,sans-serif; color:var(--blue); }
+    .portrait-placeholder small { font-size:.875rem; }
+    .project-role { display:inline-block; margin:0 0 .65rem; padding:.25rem .65rem; color:var(--blue); background:var(--mist); border-radius:4px; font-size:.875rem; font-weight:700; }
+    .project-role-pi { color:white; background:var(--blue); }
+    .person h4 { margin:0 0 .6rem; font:700 1.625rem/1.3 Arial,Helvetica,sans-serif; letter-spacing:0; overflow-wrap:anywhere; }
+    .person-title,.person-institution { margin:0; color:var(--body); font-size:1rem; line-height:1.7; }
+    .person-institution { margin-top:.2rem; }
+    .person-description { margin:1.5rem 0 0; color:var(--body); font-size:1.0625rem; line-height:1.75; }
+    .person-bio { margin-top:1rem; border-top:1px solid var(--line); }
+    .person-bio summary { padding:.75rem 0; cursor:pointer; color:var(--blue); font-weight:700; min-height:44px; }
+    .person-bio summary:hover { text-decoration:underline; }
+    .person-bio summary:active { color:var(--ink); }
+    .person-bio summary:focus-visible { outline:3px solid var(--blue); outline-offset:3px; border-radius:2px; }
+    .person-bio p { margin:.5rem 0 1.25rem; max-width:65ch; color:var(--body); font-size:1.0625rem; line-height:1.8; overflow-wrap:anywhere; }
+    .person-bio .bio-close,.person-bio[open] .bio-open { display:none; }
+    .person-bio[open] .bio-close { display:inline; }
+    .profile-link { display:inline-flex; align-items:center; gap:.5rem; color:var(--blue); font-weight:700; margin-top:.6rem; min-height:44px; text-underline-offset:4px; }
+    .profile-link:hover { text-decoration-thickness:2px; }
+    .profile-link:active { color:var(--ink); }
+    .profile-link:focus-visible { outline-color:var(--blue); }
+    @media (max-width:1000px) { .person-header { grid-template-columns:120px minmax(0,1fr); gap:1rem; } .person { padding:1.25rem; } }
+    @media (max-width:760px) { .team-heading,.team-grid { grid-template-columns:1fr; gap:1.5rem; } .team-section { padding:3.8rem 0; } .person-header { grid-template-columns:140px minmax(0,1fr); } }
+    @media (max-width:480px) { .person-header { grid-template-columns:1fr; } .portrait { max-width:180px; } }
+    /* Supplied institutional assets are displayed intact, with their original proportions. */
+    .hero-question { margin:1.5rem 0 0; color:var(--electric); font-size:1.5rem; font-weight:700; line-height:1.5; }
+    .institutions-section { padding:4rem 0 3rem; background:white; }
+    .institutions-section h2,.funding-section h2 { margin:0 0 1rem; font-size:2rem; line-height:1.3; }
+    .institution-logos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2rem; list-style:none; margin:2rem 0 0; padding:0; }
+    .institution-logos li { min-width:0; }
+    .institution-link { display:flex; align-items:center; justify-content:center; min-height:180px; padding:28px; }
+    .institution-link img { display:block; max-width:100%; height:auto; }
+    .institution-unr img { width:230px; }
+    .institution-wm img { width:290px; }
+    .institution-ncstate img { width:260px; }
+    .institution-link:focus-visible { outline-color:var(--blue); }
+    .funding-section { padding:0 0 4rem; background:white; }
+    .funding-layout { display:grid; grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr); align-items:center; gap:3rem; padding-top:3rem; border-top:1px solid var(--line); }
+    .funding-section p { margin:0; max-width:70ch; color:var(--body); }
+    .funding-nsf { display:block; width:420px; max-width:100%; margin-top:1.5rem; }
+    .funding-nsf:focus-visible { outline-color:var(--blue); }
+    .funding-nsf img { display:block; width:100%; height:auto; }
+    @media (max-width:1000px) {
+      .institution-logos { grid-template-columns:1fr; justify-items:center; gap:1rem; }
+      .institution-logos li { width:100%; max-width:400px; }
+      .institution-link { min-height:150px; }
+    }
+    @media (max-width:760px) {
+      .wordmark { flex-basis:auto; width:240px; }
+      .hero-question { font-size:1.25rem; }
+      .institutions-section { padding:3rem 0 2rem; }
+      .institution-link { padding:24px; }
+      .funding-section { padding:0 0 3rem; }
+      .funding-layout { grid-template-columns:1fr; gap:2rem; padding-top:2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="site-width masthead">
+    <a class="wordmark" href="#home" aria-label="Project home — University of Nevada, Reno"><img class="unr-logo" src="unr-signature.png" alt="University of Nevada, Reno" width="558" height="222" decoding="async"></a>
+    <nav class="nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#research">Research</a><a href="#team">Team</a><a href="#news">News &amp; Events</a><a href="#resources">Resources</a></nav>
+  </div></header>
+  <main>
+    <section class="hero" id="home"><div class="site-width hero-grid"><div><h1>Supporting Students' Modeling Practice Through a Large Language Model-Powered Pedagogical Agent in an Augmented Reality Learning Environment</h1><p class="hero-question">How can students <em>see</em> a scientific idea?</p><p class="hero-copy">This project brings augmented reality, scientific modeling, and AI-supported feedback into one learning environment for middle school science.</p><p class="hero-meta">Supported by the U.S. National Science Foundation through its RITEL program.</p></div><aside class="research-signal" aria-label="Project focus"><div class="label">Project focus</div><p>Observe a phenomenon.<br>Build a model.<br>Revise the explanation.</p><div class="signal-line"></div><div class="signal-small">AR simulations and an on-device pedagogical agent support students as their ideas take shape.</div></aside></div></section>
+    <section class="site-width intro" id="about"><div><div class="section-kicker">About the project</div><h2>Make the invisible parts of science easier to reason about.</h2></div><p>Students often need to visualize movement, scale, and relationships before they can explain a scientific system. The project studies how augmented reality and timely feedback can support that work while helping teachers understand students’ evolving models.</p></section>
+    <section class="site-width objectives" id="research"><div class="section-kicker">Research objectives</div><div class="objective-grid"><article class="objective"><div class="objective-tag">AR simulation library</div><h3>Explore in AR</h3><p>Build simulations for middle school modeling tasks that involve complex spatial change.</p></article><article class="objective"><div class="objective-tag">Student modeling</div><h3>Build and revise models</h3><p>Help students create diagrammatic models that explain systems, patterns, and scientific phenomena.</p></article><article class="objective"><div class="objective-tag">On device AI</div><h3>Receive useful feedback</h3><p>Develop an AI agent that assesses student models and supports thoughtful revision.</p></article></div></section>
+    <section class="routes"><div class="site-width"><div class="routes-head"><div><div class="section-kicker">Project life</div><h2>People, progress, and resources.</h2></div></div><div class="route-grid"><a class="route" href="#team"><div class="route-type">The people</div><h3>Meet the team</h3><p>Researchers, educators, students, and community partners working across science education, HCI, and computer science.</p><span class="arrow" aria-hidden="true">→</span></a><a class="route" href="#news"><div class="route-type">The work in progress</div><h3>News &amp; events</h3><p>Project kickoff updates, co-design workshops, prototype milestones, and future community activities.</p><span class="arrow" aria-hidden="true">→</span></a><a class="route" href="#resources"><div class="route-type">The shared work</div><h3>Resources</h3><p>AR materials, teacher guidance, instructional videos, and research products as they are ready to share.</p><span class="arrow" aria-hidden="true">→</span></a></div></div></section>
+    <section class="site-width team-section" id="team" aria-labelledby="team-title">
+      <div class="team-heading">
+        <h2 id="team-title">Meet our team.</h2>
+        <p>Our team brings together science education, human–computer interaction, and computer science to study how students learn through AR and AI-supported modeling.</p>
+      </div>
+      <h3 class="team-group-title" id="leadership-title">Project Leadership</h3>
+      <div class="team-grid" aria-labelledby="leadership-title">
+        <!-- PI first: role and order confirmed by the project coordinator. -->
+        <article class="person" aria-labelledby="mckenna-name">
+          <div class="person-header">
+            <img class="portrait" src="mckenna-lane.jpg" alt="McKenna Lane" width="640" height="640" loading="lazy" decoding="async">
+            <div><span class="project-role project-role-pi">PI</span><h4 id="mckenna-name">McKenna Lane</h4><p class="person-title">Assistant Professor</p><p class="person-institution">University of Nevada, Reno</p></div>
+          </div>
+          <p class="person-description">Digital learning environments for science education, museum-based learning, and culturally responsive pedagogy.</p>
+          <details class="person-bio"><summary><span class="bio-open">Read biography</span><span class="bio-close">Close biography</span></summary><p>Dr. McKenna Lane is an Assistant Professor at the University of Nevada, Reno. She earned her Ph.D. in Curriculum and Instruction from the University of Illinois Urbana-Champaign. Her research examines the design of digital learning environments for science education, drawing on museum-based learning, digitized collections, and culturally responsive pedagogy. She previously served as Digital Learning and Curriculum Coordinator at the Natural History Museum of Utah.</p></details>
+          <a class="profile-link" href="https://www.unr.edu/education/about/faculty-and-staff/elementary-education/mckenna-lane">Faculty profile<span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="person" aria-labelledby="linsey-name">
+          <div class="person-header">
+            <img class="portrait" src="linsey-brennan.jpg" alt="Linsey Brennan" width="640" height="640" loading="lazy" decoding="async">
+            <div><span class="project-role">Co-PI</span><h4 id="linsey-name">Linsey Brennan</h4><p class="person-title">Assistant Professor</p><p class="person-institution">University of Nevada, Reno</p></div>
+          </div>
+          <p class="person-description">Science teacher learning, classroom discourse, and equity in science education.</p>
+          <details class="person-bio"><summary><span class="bio-open">Read biography</span><span class="bio-close">Close biography</span></summary><p>Dr. Linsey Brennan is an Assistant Professor of Science Education at the University of Nevada, Reno. Her research focuses on science teacher learning, classroom discourse, and ideology through the lens of equity in science education. Dr. Brennan’s current research examines how teachers and youth collaboratively notice and respond to exclusionary practices in science classrooms. Before becoming a faculty member at the University of Nevada, Reno, Dr. Brennan taught biology, chemistry, and environmental science at an urban high school in Ohio.</p></details>
+          <a class="profile-link" href="https://www.unr.edu/education/about/faculty-and-staff/department-educator-preparation/linsey-brennan">Faculty profile<span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="person" aria-labelledby="huajie-name">
+          <div class="person-header">
+            <img class="portrait portrait-shao" src="huajie-shao.jpg" alt="Huajie Shao" width="546" height="679" loading="lazy" decoding="async">
+            <div><span class="project-role">Co-PI</span><h4 id="huajie-name">Huajie Shao</h4><p class="person-title">Assistant Professor</p><p class="person-institution">William &amp; Mary</p></div>
+          </div>
+          <p class="person-description">Develops the project’s language models, with research spanning large language models and embodied AI.</p>
+          <details class="person-bio"><summary><span class="bio-open">Read biography</span><span class="bio-close">Close biography</span></summary><p>Assistant Professor of Computer Science at William &amp; Mary. Dr. Shao’s research focuses on the intersection of large language models and embodied AI systems. To date, he has published more than 60 papers in top-tier conferences and journals, including ICML, ICLR, KDD, CVPR, ACL, TPAMI, WWW, and SIGIR. His work has received multiple best paper awards, including the Best Paper Awards at KDD 2024, ACM/IEEE CHASE 2025, CAHSE 2024, SenSys 2020, and ICCPS 2017, as well as the FUSION 2019 Student Paper Award and the UbiComp 2019 Distinguished Paper Award.</p></details>
+          <a class="profile-link" href="https://huajieshao.github.io/index.html">Personal website<span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="person" aria-labelledby="qiao-name">
+          <div class="person-header">
+            <img class="portrait portrait-jin" src="qiao-jin.png" alt="Qiao (Georgie) Jin" width="2099" height="2798" loading="lazy" decoding="async">
+            <div><span class="project-role">Co-PI</span><h4 id="qiao-name">Qiao (Georgie) Jin</h4><p class="person-title">Assistant Professor</p><p class="person-institution">NC State University</p></div>
+          </div>
+          <p class="person-description">Designs and develops the AR system, with research on XR and AI for learning, collaboration, and social connection.</p>
+          <details class="person-bio"><summary><span class="bio-open">Read biography</span><span class="bio-close">Close biography</span></summary><p>Assistant Professor in the Department of Computer Science at NC State University. Dr. Jin was previously a postdoctoral researcher at the Human-Computer Interaction Institute at Carnegie Mellon University and earned her Ph.D. in Computer Science from the University of Minnesota, where she was part of the GroupLens Research Center. Her research explores how Extended Reality (XR) and AI technologies can support remote learning, collaboration, and social connection. Her work has been published in leading HCI and social computing venues, including CHI, CSCW, UIST, and IDC, and has received multiple recognitions such as a CHI Best Paper Honorable Mention, IDC Best Paper Honorable Mention, CSCW DEI Recognition, and the UIST SIC Best Toio Award.</p></details>
+          <a class="profile-link" href="http://georgiejin.com/">Personal website<span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <h3 class="team-group-title" id="members-title">Team Members</h3>
+      <div class="team-grid" aria-labelledby="members-title">
+        <article class="person" aria-labelledby="shumin-name">
+          <div class="person-header">
+            <img class="portrait portrait-zhao" src="shumin-zhao.jpg" alt="Shumin Zhao" width="1963" height="2747" loading="lazy" decoding="async">
+            <div><span class="project-role">Research Assistant</span><h4 id="shumin-name">Shumin Zhao</h4><p class="person-title">PhD Student in STEM Education</p><p class="person-institution">University of Nevada, Reno</p></div>
+          </div>
+          <p class="person-description">Human–GenAI interaction and AI-supported learning, with experience in instructional design and multimedia development.</p>
+          <details class="person-bio"><summary><span class="bio-open">Read biography</span><span class="bio-close">Close biography</span></summary><p>Shumin Zhao is a PhD student in STEM Education at the University of Nevada, Reno, specializing in human–GenAI interaction. A former secondary technology teacher, she now instructs K-8 science methods and conducts research on AI-supported learning. Her expertise spans instructional design, qualitative and quantitative analysis, and multimedia development.</p></details>
+        </article>
+        <article class="person" aria-labelledby="elham-name">
+          <div class="person-header">
+            <div class="portrait portrait-placeholder" role="img" aria-label="Photo pending for Elham Maleki"><span aria-hidden="true">EM</span><small>Photo pending</small></div>
+            <div><span class="project-role">Research Assistant</span><h4 id="elham-name">Elham Maleki</h4><p class="person-title">Teaching Assistant</p></div>
+          </div>
+          <p class="person-description">Biography coming soon.</p>
+          <a class="profile-link" href="https://scholar.google.com/citations?user=H0M7LdgAAAAJ&amp;hl=en">Google Scholar<span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+    <section class="site-width placeholder-section" id="news"><div><div class="section-kicker">News and events</div><h2>What is happening now.</h2></div><p>Use this area for short, date-stamped updates. It gives a new project a credible public rhythm before publications and formal outcomes are available.</p></section>
+    <section class="site-width placeholder-section" id="resources"><div><div class="section-kicker">Resources</div><h2>Coming as the project develops.</h2></div><p>Future materials may include AR simulations, teacher guides, instructional videos, curriculum materials, publications, and presentations. Keep this page intentionally small until approved content is ready.</p></section>
+    <section class="institutions-section" aria-labelledby="institutions-title">
+      <div class="site-width">
+        <h2 id="institutions-title">Participating Institutions</h2>
+        <ul class="institution-logos">
+          <li><a class="institution-link institution-unr" href="https://www.unr.edu/" aria-label="University of Nevada, Reno website"><img src="unr-signature.png" alt="University of Nevada, Reno" width="558" height="222" loading="lazy" decoding="async"></a></li>
+          <li><a class="institution-link institution-wm" href="https://www.wm.edu/" aria-label="William &amp; Mary website"><img src="wm-horizontal-green-gold.png" alt="William &amp; Mary" width="2890" height="253" loading="lazy" decoding="async"></a></li>
+          <li><a class="institution-link institution-ncstate" href="https://www.ncsu.edu/" aria-label="NC State University website"><img src="ncstate-brick-4x1-red.png" alt="NC State University" width="1080" height="170" loading="lazy" decoding="async"></a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="funding-section" aria-labelledby="funding-title">
+      <div class="site-width funding-layout">
+        <div>
+          <h2 id="funding-title">Funding</h2>
+          <a class="funding-nsf" href="https://www.nsf.gov/" aria-label="U.S. National Science Foundation website"><img src="nsf-wordmark.png" alt="U.S. National Science Foundation" width="790" height="180" loading="lazy" decoding="async"></a>
+        </div>
+        <div>
+          <p>This collaborative research project is supported by the U.S. National Science Foundation through the Research on Innovative Technologies for Enhanced Learning (RITEL) program.</p>
+          <a class="profile-link" href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2506890">University of Nevada, Reno award: #2506890</a>
+          <!-- Only the confirmed UNR award is linked here; partner award numbers are not inferred. -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="site-width"><span>Scientific modeling · Augmented reality · AI-supported feedback</span><span>UNR · William &amp; Mary · NC State University</span></div></footer>
+</body>
+</html>
